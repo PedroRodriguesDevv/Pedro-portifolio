@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
     background-image: url('../assets/images/cyberpunk-street.png');
     background-size: cover;
-    background-position: center 80%;
+    background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -36,7 +36,7 @@ body {
 /* ===== TABLET - iPad Air, Surface Pro ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
     .music-player {
-        bottom: 80px;  /* Sobe o player para não sobrepor o rodapé */
+        bottom: 80px;
         right: 20px;
         width: 190px;
         padding: 12px 14px;
@@ -77,19 +77,21 @@ body {
     }
 
     .sticky-note {
-        display: none;  /* Esconde o sticky note em tablets */
+        display: none;
     }
 
-    /* Ajuste do rodapé/contato */
     .contact-section {
-        padding-bottom: 100px;  /* Dá espaço para o music player */
+        padding-bottom: 100px;
     }
 }
 
-
+/* ===== CELULAR ===== */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
+        background-size: contain;  /* ← MUDEI AQUI: imagem inteira sem zoom */
+        background-position: center top;
+        background-color: #0a0a0f;
     }
 }
 
@@ -881,7 +883,6 @@ nav {
 }
 
 /* ===== MUSIC PLAYER ===== */
-/* ===== MUSIC PLAYER ===== */
 .music-player {
     position: fixed;
     bottom: 6px;
@@ -895,6 +896,7 @@ nav {
     -webkit-backdrop-filter: blur(12px);
     transition: all 0.3s ease;
 }
+
 .mp-label {
     font-size: 9px;
     color: rgba(255, 255, 255, 0.35);
@@ -950,7 +952,6 @@ nav {
         font-size: 12px;
     }
 
-    /* Slider de volume no celular - mais compacto */
     .volume-slider-container {
         bottom: 40px;
         padding: 6px 4px;
@@ -959,7 +960,7 @@ nav {
         width: 50px;
     }
 
-        .mp-label {
+    .mp-label {
         text-align: left;
         font-size: 6px;
         letter-spacing: 3px;
@@ -1049,8 +1050,7 @@ nav {
     border: none;
 }
 
-
-    /* ============================================
+/* ============================================
    RESPONSIVIDADE
    ============================================ */
 
@@ -1452,250 +1452,8 @@ nav {
     .stack-name {
         font-size: 7px;
     }
-    .projects-section {
-        padding: 30px 20px 40px 20px;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    .contact-section {
-        padding: 30px 20px 40px 20px;
-    }
-    .contact-container {
-        padding: 20px;
-        gap: 30px;
-        flex-direction: column;
-    }
-    .contact-info {
-        min-width: auto;
-    }
-    .contact-form {
-        min-width: auto;
-    }
-    .contact-form .btn-primary {
-        width: 100%;
-        justify-content: center;
-    }
-    .sticky-note {
-        display: none;
-    }
-    .music-player {
-        bottom: 16px;
-        right: 16px;
-        width: 180px;
-        padding: 12px;
-    }
-    .mp-thumb {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
-    }
-    .mp-title {
-        font-size: 10px;
-    }
-    .volume-slider-container {
-        bottom: 42px;
-        padding: 6px 4px;
-    }
-    .volume-slider {
-        width: 60px;
-    }
 }
 
-@media (max-width: 480px) {
-    nav {
-        padding: 12px 16px;
-    }
-    .logo {
-        font-size: 16px;
-    }
-    .logo-border {
-        font-size: 14px;
-        padding: 2px 6px;
-    }
-    .hero-name {
-        font-size: clamp(28px, 8vw, 40px);
-    }
-    .hero-tag {
-        font-size: 12px;
-    }
-    .btn-primary,
-    .btn-outline {
-        font-size: 12px;
-        padding: 10px 18px;
-    }
-    .terminal-wrap {
-        max-height: 300px;
-        border-width: 1px;
-    }
-    .terminal-body {
-        min-height: 160px;
-        max-height: 240px;
-        padding: 12px;
-        font-size: 10px;
-        line-height: 1.7;
-    }
-    .terminal-bar {
-        padding: 8px 12px;
-    }
-    .term-path {
-        font-size: 10px;
-    }
-    .t-cmd {
-        font-size: 10px;
-    }
-    .t-status .key {
-        font-size: 9px;
-    }
-    .t-status .online {
-        font-size: 9px;
-    }
-    .t-cursor {
-        width: 7px;
-        height: 12px;
-    }
-    .stack-section {
-        padding: 20px 12px;
-    }
-    .section-label {
-        font-size: 10px;
-    }
-    .stack-grid {
-        padding: 12px;
-        gap: 4px;
-    }
-    .stack-item {
-        min-width: 45px;
-        padding: 8px 4px;
-        gap: 6px;
-    }
-    .stack-item .stack-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-    .stack-name {
-        font-size: 8px;
-    }
-    .projects-section {
-        padding: 20px 12px 30px 12px;
-    }
-    .project-thumb {
-        height: 110px;
-    }
-    .project-thumb-inner {
-        font-size: 9px;
-        padding: 10px;
-        line-height: 1.6;
-    }
-    .project-info {
-        padding: 10px 12px;
-    }
-    .project-name {
-        font-size: 10px;
-    }
-    .project-arrow {
-        width: 20px;
-        height: 20px;
-        font-size: 9px;
-    }
-    .contact-section {
-        padding: 20px 12px 30px 12px;
-    }
-    .contact-container {
-        padding: 16px 12px;
-        gap: 20px;
-    }
-    .contact-info h2 {
-        font-size: 18px;
-    }
-    .contact-info p {
-        font-size: 13px;
-    }
-    .contact-item {
-        font-size: 13px;
-        gap: 10px;
-    }
-    .contact-icon {
-        font-size: 18px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-    .contact-form .btn-primary {
-        font-size: 12px;
-        padding: 10px 16px;
-    }
-    .music-player {
-        width: 150px;
-        padding: 8px 10px;
-        bottom: 12px;
-        right: 12px;
-    }
-    .mp-thumb {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-    .mp-title {
-        font-size: 9px;
-    }
-    .mp-controls {
-        gap: 10px;
-    }
-    .mp-play {
-        width: 24px;
-        height: 24px;
-        font-size: 10px;
-    }
-    .mp-btn {
-        font-size: 10px;
-    }
-    .volume-slider-container {
-        bottom: 35px;
-        padding: 4px 3px;
-    }
-    .volume-slider {
-        width: 50px;
-    }
-    .volume-slider::-webkit-slider-thumb {
-        width: 12px;
-        height: 12px;
-    }
-}
-
-@media (max-width: 360px) {
-    .hero-name {
-        font-size: clamp(20px, 6vw, 28px);
-    }
-    .name-white,
-    .name-purple {
-        font-size: clamp(18px, 5vw, 26px);
-    }
-    .hero-subtitle {
-        font-size: 12px;
-    }
-    .terminal-body {
-        font-size: 8px;
-        padding: 10px;
-        line-height: 1.6;
-        min-height: 140px;
-        max-height: 200px;
-    }
-    .stack-item {
-        min-width: 38px;
-        padding: 6px 3px;
-    }
-    .stack-item .stack-icon svg {
-        width: 18px;
-        height: 18px;
-    }
-    .stack-name {
-        font-size: 7px;
-    }
-}
 /* ===== EFEITOS EXTRAS ===== */
 
 /* Brilho ao passar o mouse */
