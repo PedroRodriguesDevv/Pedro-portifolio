@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Rodrigues | Dev Full Stack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== NAVEGAÇÃO ===== -->
+    <nav>
+        <div class="logo">
+            <div class="logo-border"><span>PR</span></div>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="active">01.&nbsp;INÍCIO</a></li>
+            <li><a href="#stack">02.&nbsp;SOBRE</a></li>
+            <li><a href="#projects">03.&nbsp;PROJETOS</a></li>
+            <li><a href="#contact">04.&nbsp;CONTATO</a></li>
+        </ul>
+        <button class="btn-cv" id="downloadCV">BAIXAR CV &nbsp;↓</button>
+    </nav>
+
+    <!-- ===== ÍCONES LATERAIS ===== -->
+    <div class="side-icons">
+        <a class="side-icon terminal-btn" href="#">&gt;_</a>
+        <div class="side-line"></div>
+        <a class="side-icon" href="https://github.com/PedroRodriguesDevv" target="_blank" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a class="side-icon" href="https://www.linkedin.com/in/pedro-rodrigues-523749384" target="_blank" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a class="side-icon" href="https://www.instagram.com/pedro_dosreis" target="_blank" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <div class="side-line"></div>
+        <div class="scroll-label">SCROLL</div>
+    </div>
+
+    <!-- ===== HERO / INÍCIO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-left">
+            <div class="hero-tag">desenvolvedor full stack</div>
+            <div class="hero-name">
+                <span class="name-white">PEDRO</span>
+                <span class="name-purple">RODRIGUES</span>
+            </div>
+            <p class="hero-subtitle">
+                Transformando ideias em código.<br>
+                Construindo o futuro, uma linha por vez.
+            </p>
+            <div class="hero-btns">
+                <button class="btn-primary" id="projectsBtn">VER PROJETOS &gt;_</button>
+                <button class="btn-outline" id="contactBtn">ENTRAR EM CONTATO ✉</button>
+            </div>
+        </div>
+<!-- TERMINAL -->
+<div class="terminal-wrap">
+    <div class="terminal-bar">
+        <span class="term-path">C:\pedro.dev</span>
+        <div class="term-controls">
+            <div class="tc red"></div>
+            <div class="tc yellow"></div>
+            <div class="tc green"></div>
+        </div>
+    </div>
+    <div class="terminal-body" id="terminalBody">
+        <!-- Tudo será gerado pelo JavaScript -->
+    </div>
+</div>
+    </section>
+
+ <!-- ===== STACK / SOBRE ===== -->
+<section class="stack-section" id="stack">
+    <div class="section-label">STACK PRINCIPAL</div>
+    <div class="stack-grid">
+        <!-- Java -->
+        <div class="stack-item">
+            <div class="stack-icon java-icon">
+                <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor">
+                    <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.324.646-4.699 2.013-10.633-.118-6.946-1.149zm-.586-2.457s-1.028.761.542.924c2.032.212 3.636.231 6.413-.313 0 0 .384.389.987.601-5.679 1.661-12.007.13-7.942-1.212zm10.172 4.074s.679.56-.748.993c-2.712.82-11.288 1.068-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.978-1.822zM9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 0 0 .401.091.618.147-2.368.696-5.189.378-6.307-.259-1.944-1.112.463-1.238 1.463-1.238zm8.184 2.689c.088.406-.329.608-.447.665-.65.314-2.461.68-2.461.68s2.246-.945 2.908-1.345zm-9.141.056s-1.427.854.573 1.036c.889.086 2.589.108 4.071-.062 0 0 .389.278.999.348-3.192.918-6.755-.115-5.643-1.322zm11.959 4.021s.755.574-.832 1.025c-3.022.858-12.032.983-14.544.03-.863-.333.47-.972.844-1.095.349-.116.551-.084.551-.084-.802-.733-4.566 1.673-1.725 2.353 9.963 2.352 17.998-.585 15.706-2.229zM15.555 4.219s2.925 2.896-1.635 6.563c-0.855.689-1.339 1.345-1.029 1.889.566.991-2.067 1.43-3.061.598-1.358-1.132-1.118-2.457.448-3.826 1.797-1.565 5.277-5.224 5.277-5.224z"/>
+                </svg>
+            </div>
+            <div class="stack-name">Java</div>
+        </div>
+
+        <!-- Spring Boot -->
+        <div class="stack-item">
+            <div class="stack-icon spring-icon">
+                <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor">
+                    <path d="M21.852 13.141c-.191-.149-.402-.225-.611-.225-.437 0-.787.333-1.08.764-.621.918-1.392 1.743-2.064 1.743-.304 0-.536-.155-.653-.432-.113-.269-.079-.625.089-1.012.045-.104.094-.211.143-.319.518-1.067 1.604-2.461 1.604-3.476 0-.623-.298-1.052-1.188-1.052-.561 0-1.202.231-1.932.655.18-.465.282-.802.282-1.154 0-.689-.344-1.167-1.224-1.167-1.158 0-2.491.748-3.688 1.953-.967.975-1.544 1.973-1.544 2.674 0 .565.272.943.811.943.43 0 .926-.246 1.574-.754-.335 1.182-.524 2.052-.524 2.807 0 1.209.654 2.125 1.793 2.125.931 0 1.852-.441 2.711-1.171-.051.483-.078.901-.078 1.145 0 1.208.564 1.921 1.799 1.921.966 0 2.075-.634 3.236-1.705.785-.726 1.374-1.525 1.374-1.965 0-.276-.117-.429-.326-.564zm-4.086-2.184c-.357.714-.844 1.378-1.3 1.735-.484.378-.816.528-1.049.528-.304 0-.466-.177-.466-.49 0-.436.226-1.034.747-1.814.361-.542.878-1.097 1.379-1.461.364-.265.675-.382.925-.382.224 0 .327.115.327.338 0 .286-.181.728-.563 1.546zM22.542 17.331c-2.93 2.535-6.686 3.979-10.64 3.979-4.319 0-8.111-1.596-10.986-4.236-.187-.172-.005-.409.21-.279 3.146 1.829 7.026 2.935 11.032 2.935 4.328 0 9.127-.898 12.656-2.743.321-.168.593.253.385.49-.334.35-.707.676-1.059 1.045z"/>
+                </svg>
+            </div>
+            <div class="stack-name">Spring Boot</div>
+        </div>
+
+        <!-- PostgreSQL -->
+        <div class="stack-item">
+            <div class="stack-icon postgres-icon">
+                <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor">
+                    <path d="M12.004 0C5.374 0 0 5.374 0 12.004c0 6.63 5.374 12.004 12.004 12.004 6.63 0 12.004-5.374 12.004-12.004C24.008 5.374 18.634 0 12.004 0zm.686 4.182c1.279.119 2.383.539 3.264 1.349.397.367.736.795 1.015 1.284-.494.18-.989.365-1.484.549-1.114-.985-2.35-1.371-3.741-1.456-.605-.044-1.171.02-1.674.299-.426.236-.606.702-.641 1.088-.053.69.246 1.18.749 1.502.52.384 1.181.531 1.812.67.792.175 1.668.373 2.453.724.776.347 1.475.865 1.866 1.67.339.697.375 1.521.171 2.317-.189.749-.607 1.415-1.181 1.947-.551.511-1.225.823-1.988.974.328.643.522 1.331.539 1.943.019.751-.099 1.523-.425 2.136-.093.173-.256.368-.424.378-.378.023-.553-.221-.604-.634-.052-.408-.02-.855.088-1.285.108-.43.228-.856.266-1.312.091-1.153-.063-2.344-.823-3.263-.18-.219-.413-.395-.631-.574-.111-.094-.217-.198-.337-.279-.173.596-.39 1.169-.634 1.729-.181.417-.381.825-.532 1.253-.147.416-.223.863-.342 1.287-.061.216-.143.431-.279.617-.142.193-.345.355-.598.318-.222-.033-.364-.178-.446-.377-.096-.237-.125-.502-.117-.769.012-.256.042-.512.098-.762.062-.275.159-.545.213-.825.124-.638.135-1.293.065-1.939-.067-.609-.243-1.198-.509-1.748-.248-.507-.611-.949-.988-1.385-.366-.424-.757-.861-.945-1.419-.179-.523-.173-1.063.005-1.568.181-.508.506-.896.906-1.173.19-.132.399-.239.608-.339.058.024.103.068.148.111-.307.12-.596.27-.868.438-.361.218-.696.459-.933.779-.187.252-.315.517-.393.751.075-.152.164-.28.242-.407.033-.056.038-.122.056-.183-.228.087-.437.22-.636.359-.351.249-.628.576-.86.936-.238.369-.409.773-.543 1.189-.146.457-.248.93-.363 1.393-.023.096-.07.186-.1.278-.024.068-.083.153-.137.167-.112.03-.151-.083-.169-.165-.012-.253.061-.509.086-.763.024-.252.015-.504.038-.755.016-.159.011-.32.035-.48.039-.256.126-.5.197-.745.286-.998.755-1.938 1.461-2.71.306-.335.644-.637.993-.917.651-.522 1.401-.873 2.234-1.031.417-.08.84-.115 1.262-.11.315.001.634.022.951.052z"/>
+                </svg>
+            </div>
+            <div class="stack-name">PostgreSQL</div>
+        </div>
+
+        <!-- React Native -->
+        <div class="stack-item">
+            <div class="stack-icon react-icon">
+                <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor">
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <path d="M12 21.833c-1.094 0-2.072-.27-2.903-.811-2.304-1.5-3.449-4.184-3.523-8.158-0.077-3.996.949-6.932 3.052-8.601.844-.67 1.816-1.015 2.855-1.015.813 0 1.604.227 2.306.668.762.48 1.392 1.133 1.889 1.96.573.953.877 2.044.887 3.198-.013 1.274-.348 2.526-.974 3.722-1.253 2.394-3.553 3.838-5.902 4.132-.711.089-1.315.137-1.781.137zm-.047-1.5c.431 0 .971-.044 1.576-.127 2.176-.27 4.275-1.587 5.371-3.706.547-1.058.838-2.186.849-3.327-.008-.99-.263-1.925-.755-2.748-.477-.797-1.042-1.385-1.716-1.795-.61-.371-1.296-.561-2.048-.561-.923 0-1.792.311-2.546.826-1.849 1.267-2.722 3.827-2.648 7.053.067 3.584 1.001 5.94 2.937 7.226.602.4 1.244.593 1.978.593z"/>
+                    <path d="M12 21.832c-.733 0-1.376-.194-1.978-.594-1.936-1.285-2.871-3.642-2.937-7.226-.074-3.226.799-5.786 2.648-7.053.754-.516 1.623-.826 2.546-.826.751 0 1.438.19 2.048.561.674.41 1.239.999 1.716 1.795.492.823.747 1.758.755 2.748.011 1.141-.302 2.269-.849 3.327-1.096 2.119-3.196 3.436-5.371 3.706-.605.083-1.145.127-1.576.127zm0-1.5c.431 0 .971-.044 1.576-.127 2.176-.27 4.275-1.587 5.371-3.706.547-1.058.838-2.186.849-3.327-.008-.99-.263-1.925-.755-2.748-.477-.797-1.042-1.385-1.716-1.795-.61-.371-1.296-.561-2.048-.561-.923 0-1.792.311-2.546.826-1.849 1.267-2.722 3.827-2.648 7.053.067 3.584 1.001 5.94 2.937 7.226.602.4 1.244.593 1.978.593z"/>
+                    <path d="M5.5 19.333c-.564 0-1.12-.144-1.592-.435-2.414-1.488-3.493-4.179-3.257-8.086.246-4.105 1.561-6.999 3.951-8.54.936-.604 1.984-.912 3.064-.912.98 0 1.962.275 2.831.811 2.034 1.254 3.343 3.611 4.031 6.324.305 1.203.484 2.459.519 3.709.035 1.245-.071 2.443-.319 3.524-.75 3.273-2.528 5.284-4.869 5.875-.75.19-1.51.278-2.223.278zm.077-1.5c.625 0 1.312-.077 1.992-.249 2.042-.514 3.641-2.295 4.292-5.028.222-.973.319-2.078.286-3.216-.031-1.126-.198-2.258-.482-3.349-.633-2.437-1.787-4.586-3.536-5.672-.771-.471-1.654-.715-2.58-.715-.94 0-1.859.269-2.704.801-2.114 1.338-3.285 3.956-3.516 7.716-.222 3.692.714 6.052 2.751 7.316.483.3 1.005.456 1.543.456z"/>
+                </svg>
+            </div>
+            <div class="stack-name">React Native</div>
+        </div>
+
+        <!-- Angular -->
+        <div class="stack-item">
+            <div class="stack-icon angular-icon">
+                <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor">
+                    <path d="M12 2.5L3.5 5.2l1.3 13.7L12 22l7.2-3.1 1.3-13.7L12 2.5zm-.9 13.4l-2.5-2.5 1.2-1.2 1.4 1.4 3.7-3.7 1.2 1.2-5 4.8z"/>
+                </svg>
+            </div>
+            <div class="stack-name">Angular</div>
+        </div>
+    </div>
+</section>
+
+  <!-- ===== PROJETOS ===== -->
+<section class="projects-section" id="projects">
+    <div class="section-label">PROJETOS EM DESTAQUE</div>
+    <div class="projects-grid">
+        <!-- Dojo-System -->
+        <div class="project-card" data-project="dojo">
+            <div class="project-thumb thumb-dojo">
+                <div class="project-thumb-inner">
+                    &gt; dojo-system.exe<br>
+                    &gt; loading...<br>
+                    ████ 50%<br>
+                    <span style="font-size:8px;color:rgba(255,255,255,0.4);">🚧 Em desenvolvimento</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-name">DOJO-SYSTEM<div class="project-arrow">&gt;&gt;</div></div>
+                <div class="project-desc">App Mobile + Web Admin para academia</div>
+            </div>
+        </div>
+        
+        <!-- My-Finance -->
+        <div class="project-card" data-project="finance">
+            <div class="project-thumb thumb-finance">
+                <div class="project-thumb-inner">
+                    &gt; my-finance.exe<br>
+                    &gt; loading...<br>
+                    █████ 60%<br>
+                    <span style="font-size:8px;color:rgba(255,255,255,0.4);">🚧 Em desenvolvimento</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-name">MY-FINANCE<div class="project-arrow">&gt;&gt;</div></div>
+                <div class="project-desc">App mobile de controle financeiro</div>
+            </div>
+        </div>
+        
+        <!-- Boot Webhook -->
+        <div class="project-card" data-project="webhook">
+            <div class="project-thumb thumb-webhook">
+                <div class="project-thumb-inner">
+                    &gt; webhook-boot.exe<br>
+                    &gt; loading...<br>
+                    ██████████ 100%<br>
+                    <span style="font-size:8px;color:#00ff88;">✅ Finalizado</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-name">WEBHOOK BOOT<div class="project-arrow">&gt;&gt;</div></div>
+                <div class="project-desc">Sistema de pagamentos com webhook</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== CONTATO ===== -->
+    <section class="contact-section" id="contact">
+        <div class="section-label">CONTATO</div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Vamos construir algo incrível?</h2>
+                <p>Estou sempre aberto a novas oportunidades e projetos desafiadores.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>pedrirodrigues0@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Brasil</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+                <button type="submit" class="btn-primary">ENVIAR MENSAGEM &gt;_</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== STICKY NOTE ===== -->
+    <div class="sticky-note">
+        <div class="note-logo">👑 PR</div>
+        <div class="note-text">DISCIPLINA<br>FOCO<br>CONSTÂNCIA<br>EXECUÇÃO</div>
+    </div>
+
+    <!-- ===== MUSIC PLAYER ===== -->
+    <div class="music-player">
+        <div class="mp-label">NOW PLAYING</div>
+        <div class="mp-top">
+            <div class="mp-thumb" id="musicThumb">🎵</div>
+            <div class="mp-info">
+                <div class="mp-artist" id="musicArtist">Oliver Tree</div>
+                <div class="mp-title" id="musicTitle">Alien Boy</div>
+            </div>
+        </div>
+        <div class="mp-bar">
+            <div class="mp-progress" id="musicProgress" style="width: 0%"></div>
+        </div>
+        <div class="mp-controls">
+            <button class="mp-btn" id="prevBtn">⏮</button>
+            <button class="mp-play" id="playBtn">▶</button>
+            <button class="mp-btn" id="nextBtn">⏭</button>
+             <!-- 🔥 BOTÃO DE VOLUME -->
+        <button class="mp-btn" id="volumeBtn" title="Volume">🔊</button>
+        </div>
+        <!-- ELEMENTO DE ÁUDIO -->
+        <audio id="audioPlayer" preload="metadata">
+            <source src="assets/music/Alien-Boy.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
