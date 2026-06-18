@@ -245,35 +245,33 @@ volumeSlider.className = 'volume-slider';
 volumeSlider.min = 0;
 volumeSlider.max = 1;
 volumeSlider.step = 0.01;
-volumeSlider.value = 1.0;
+volumeSlider.value = 0.8;  // ← VOLUME INICIAL 80%
 
 sliderContainer.appendChild(volumeSlider);
 
-// Adicionar ao player (dentro do mp-controls)
 const controlsContainer = document.querySelector('.mp-controls');
 controlsContainer.style.position = 'relative';
 controlsContainer.appendChild(sliderContainer);
 
-// Abrir/fechar slider ao clicar no botão
+// Abrir/fechar slider
 volumeBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     sliderContainer.classList.toggle('active');
 });
 
-// 🔥 FECHAR AO CLICAR FORA (em qualquer lugar da página)
+// Fechar ao clicar fora
 document.addEventListener('click', (e) => {
-    // Verifica se o clique foi fora do slider e fora do botão
     if (!sliderContainer.contains(e.target) && e.target !== volumeBtn) {
         sliderContainer.classList.remove('active');
     }
 });
 
-// Controlar volume
+// 🔥 CONTROLAR VOLUME
 volumeSlider.addEventListener('input', (e) => {
     const vol = parseFloat(e.target.value);
     audio.volume = vol;
+    console.log('🔊 Volume:', vol);
     
-    // Mudar ícone conforme o volume
     if (vol === 0) {
         volumeBtn.textContent = '🔇';
     } else if (vol < 0.5) {
