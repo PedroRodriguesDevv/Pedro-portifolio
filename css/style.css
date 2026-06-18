@@ -89,8 +89,8 @@ body {
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
-        background-size: cover;  /* ← MUDEI AQUI: imagem inteira sem zoom */
-        background-position: center center;
+        background-size: contain;  /* ← MUDEI AQUI: imagem inteira sem zoom */
+        background-position: center top;
         background-color: #0a0a0f;
     }
 }
