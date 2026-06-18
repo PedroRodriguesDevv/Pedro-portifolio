@@ -119,7 +119,7 @@ const playlist = [
         title: 'Alien Boy',
         artist: 'Oliver Tree',
         thumb: '🎵',
-        src: 'assets/music/Alien-Boy.mp3'  // ← MUDE PARA O NOME DO SEU ARQUIVO
+        src: 'https://PedroRodriguesDevv.github.io/Pedro-portifolio/assets/music/Alien-Boy.mp3'  // ← MUDE PARA O NOME DO SEU ARQUIVO
     }
 ];
 
